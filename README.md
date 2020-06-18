@@ -1,6 +1,6 @@
 # playwithflutter
 
-A new Flutter project.
+Change branches to get more info about different types of widgets..
 
 ## Getting Started
 
