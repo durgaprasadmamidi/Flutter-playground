@@ -34,6 +34,25 @@ class MyApp extends StatelessWidget {
               onPressed: () {
                 
               },),
+              drawer: Drawer(
+              child: ListView(
+                padding: const EdgeInsets.all(0),
+                children: [
+                  DrawerHeader(
+                    child: Text("Durga Prasad"),
+                    decoration: BoxDecoration(
+                      color: Colors.purple
+                    ),
+                  ),
+                  ListTile(
+                    leading: Icon(Icons.person),
+                    title: Text("Durga Prasad Mamidi"),
+                    subtitle: Text("Flutter Developer"),
+                    trailing: Icon(Icons.edit),
+                  )
+                ],
+              ),
+              ),
           );
         }
       }
