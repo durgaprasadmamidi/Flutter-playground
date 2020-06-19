@@ -73,6 +73,16 @@ class _MainscreenState extends State<Mainscreen> {
               title: Text("Durga Prasad Mamidi"),
               subtitle: Text("Flutter Developer"),
               trailing: Icon(Icons.edit),
+              onTap: () {
+                
+              },
+            ),
+            ListTile(
+            leading: Icon(Icons.mail),
+            title: Text("G-mail"),
+            subtitle: Text("durgaprasad.mamidi1608@gmail.com"),
+            trailing: Icon(Icons.edit),
+            onTap: (){},
             )
           ],
         ),
