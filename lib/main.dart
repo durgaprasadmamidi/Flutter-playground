@@ -25,37 +25,53 @@ class Mainscreen extends StatefulWidget {
 }
 
 class _MainscreenState extends State<Mainscreen> {
+  String nameText = "Your name here";
+  TextEditingController _controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Flutter Playground"),
       ),
-      body: SingleChildScrollView(
-          child: Padding(
-        padding: EdgeInsets.all(10),
-        child: Card(
-          child: Column(
-            children: [
-              Center(
-                  child: Image.network(
-                "https://images.unsplash.com/photo-1592430571922-763fca445247?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-                fit: BoxFit.cover,
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(10.0),
+          child: SingleChildScrollView(
+              child: Card(
+                child: Column(
+                  children: [
+                    Center(
+                        child: Image.network(
+                      "https://images.unsplash.com/photo-1592430571922-763fca445247?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+                      fit: BoxFit.cover,
+                    )),
+                    SizedBox(
+                        height: 16,
+                      ),
+                      Text(nameText,style: TextStyle(fontWeight: FontWeight.bold),),
+                      Padding(
+                        padding: EdgeInsets.all(16),
+                        child: TextField(
+                          decoration: InputDecoration(
+                              hintText: "Enter your name",
+                              labelText: "name",
+                              border: OutlineInputBorder()),
+                          controller: _controller,
+                        ),
+                      )
+                  ],
+                ),
               )),
-              SizedBox(
-                height: 15,
-              ),
-              Text("Durga Prasad Mamidi"),
-              SizedBox(
-                height: 15,
-              )
-            ],
-          ),
         ),
-      )),
+      ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          nameText = _controller.text;
+          setState(() {
+            
+          });
+        },
       ),
       drawer: Drawer(
         child: ListView(
